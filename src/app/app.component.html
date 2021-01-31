@@ -7,23 +7,31 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <label for="expression-test">Expressão: &nbsp; </label>
-      <input id="expression-test" type="text" placeholder="type your expression to test here" (keyup)="testExpression($event)">
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <label for="input-text">Dados de entrada'</label>
-        <div>
-          <textarea name="input-text" id="input-text" cols="30" rows="10" style="width: 100%; height: 100%;" >{{[(inputSample)]}}</textarea>
-        </div>
-
-      </div>
-      <div class="col-6">
-          <label for="result">Resultado</label>
-          <div>
-            <textarea name="result" id="result-text" cols="30" rows="10" style="width: 100%; height: 100%;">{{resultText}}</textarea>
+    <div class="mt-5 pl-2" style="height: 95vh;">
+      <div class="row mb-3">
+        <div class="input-group col-12">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="expression-test">Expressão: </label>
           </div>
+          <input id="expression-test" type="text" class="form-control" placeholder="digite sua expressão jsonpath aqui"
+            (keyup)="testExpression($event)">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label class="input-group-text" for="input-text">Dados de entrada</label>
+          <div>
+            <textarea class="form-control" name="input-text" id="input-text" cols="30" rows="10"
+              style="width: 100%; height: 100%;">{{[(inputSample)]}}</textarea>
+          </div>
+        </div>
+        <div class="col-6">
+          <label class="input-group-text" for="result">Resultado</label>
+          <div>
+            <textarea class="form-control" name="result" id="result-text" cols="30" rows="10"
+              style="width: 100%; height: 100%;" >{{resultText | json}}</textarea>
+          </div>
+        </div>
       </div>
     </div>
   </div>

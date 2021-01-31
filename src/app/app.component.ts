@@ -51,13 +51,15 @@ export class AppComponent {
   resultText: string;
 
   setResultText(value) {
-    let arrayResult = JSONPath({ path: this.pathExpression, json: JSON.parse(this.inputSample) });
-    this.resultText = '';
+    let arrayResult = JSONPath({ path: this.pathExpression, wrap: false, json: JSON.parse(this.inputSample) });
+    // this.resultText = '';
 
-    arrayResult.forEach(element => {
-      this.resultText += JSON.stringify(element) + "\n";
+    // arrayResult.forEach(element => {
+    //   this.resultText += JSON.stringify(element) + "\n";
       
-    });
+    // });
+    console.log( 'array type:', typeof arrayResult);
+    this.resultText = arrayResult || 'Sem resultados para a expressão.';
   }
 
 
